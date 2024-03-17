@@ -1,0 +1,12 @@
+{% extends "mainApp/basic.html" %}
+
+{% block content %}
+  <h2 class="text-info">{{news.title}}</h2>
+  <h6 class="text-info">Опубликовано: {{news.date|date:"d-m-Y в H:i:s"}}</h6>
+  <div class="container">
+    {{news.intro|safe|linebreaks}}
+    <br><img src="/static/mainApp/img/{{news.img}}" class="img-thumbnail"  alt="{{post.title}}"><br><br>
+    {{news.text|safe|linebreaks}}
+  </div>
+  <a href="/">Вернуться назад</a>
+{% endblock %}

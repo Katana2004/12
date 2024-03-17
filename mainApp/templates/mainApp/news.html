@@ -1,0 +1,10 @@
+{% extends "mainApp/basic.html" %}
+
+{% block content %}
+  {% for post in object_list %}
+    <a href="/news/{{post.id}}"><h4>{{post.title}}</h4></a>
+    Опубликовано: <span class="badge badge-light">{{post.date|date:"d m Y в H:i:s"}}</span>
+    <img src="/static/mainApp/img/{{post.img}}" class="img-thumbnail" style="width:80%; margin: 20px 0" alt="{{post.title}}">
+    <p>{{post.intro}}</p>
+  {% endfor %}
+{% endblock %}
